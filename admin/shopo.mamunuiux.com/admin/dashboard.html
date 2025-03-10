@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="https://shopo.mamunuiux.com/uploads/website-images/favicon-2022-09-20-09-51-23-8334.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>S Shanthi Tex</title>
+    <title>Login</title>
+
+
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/css/bootstrap.min.css">
+    <link href="https://shopo.mamunuiux.com/backend/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/css/style.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/css/bootstrap-social.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/css/components.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/toastr/toastr.min.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/css/bootstrap4-toggle.min.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/css/dev.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/css/select2.min.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/css/tagify.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/css/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/css/fontawesome-iconpicker.min.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/summernote/summernote.min.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/clockpicker/dist/bootstrap-clockpicker.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/datetimepicker/jquery.datetimepicker.css">
+    <link rel="stylesheet" href="https://shopo.mamunuiux.com/backend/css/iziToast.min.css">
+
+    <script src="https://shopo.mamunuiux.com/backend/js/jquery-3.6.0.min.js"></script>
+    <style>
+        .fade.in {
+            opacity: 1 !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="main-wrapper">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar">
+                <div class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3">
+                        <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg custom_click"><i class="fas fa-bars"></i></a></li>
+                        <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav navbar-right">
+                    <li class="dropdown dropdown-list-toggle"><a target="_blank" href="https://shopo-ecom.vercel.app/about" class="nav-link nav-link-lg"><i class="fas fa-home"></i> Visit Website</i></a>
+
+                    </li>
+
+                    <!-- Language Selector Dropdown -->
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                 <i class="fas fa-globe"></i> English
+             </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="https://shopo.mamunuiux.com/language-switcher?lang_code=en" class="dropdown-item has-icon">
+                        English
+                    </a>
+                            <a href="https://shopo.mamunuiux.com/language-switcher?lang_code=bn" class="dropdown-item has-icon">
+                        Bangla
+                    </a>
+                            <a href="https://shopo.mamunuiux.com/language-switcher?lang_code=hi" class="dropdown-item has-icon">
+                        Hendi
+                    </a>
+                            <a href="https://shopo.mamunuiux.com/language-switcher?lang_code=ar" class="dropdown-item has-icon">
+                        Arabic
+                    </a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <!-- <img alt="image" src="https://shopo.mamunuiux.com/uploads/website-images/ibrahim-khalil-2022-01-30-02-48-50-5743.jpg" class="rounded-circle mr-1"> -->
+                          <div class="d-sm-none d-lg-inline-block">Admin</div></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+
+                            <a href="https://shopo.mamunuiux.com/admin/profile" class="dropdown-item has-icon">
+                <i class="far fa-user"></i> Profile
+              </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="https://shopo.mamunuiux.com/admin/logout" class="dropdown-item has-icon text-danger" onclick="event.preventDefault();
+              document.getElementById('admin-logout-form').submit();">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
+
+                            <form id="admin-logout-form" action="https://shopo.mamunuiux.com/admin/logout" method="POST" class="d-none">
+                                <input type="hidden" name="_token" value="MozkdWEvgbRGfVhCTXrNwyhGDiVwxhjNlKV9uKvk" autocomplete="off"> </form>
+
+
+
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+
+
+
+            <div class="main-sidebar">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand">
+                        <a href="https://shopo.mamunuiux.com/admin/dashboard">S Shanthi Tex</a>
+                    </div>
+                    <div class="sidebar-brand sidebar-brand-sm">
+                        <a href="https://shopo.mamunuiux.com/admin/dashboard">Sp</a>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li class="active"><a class="nav-link" href="https://shopo.mamunuiux.com/admin/dashboard"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-shopping-cart"></i><span>Orders</span></a>
+
+                            <ul class="dropdown-menu">
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/all-order">All Orders</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/pending-order">Pending Orders</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/pregress-order">Progress Orders</a></li>
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/delivered-order">Delivered Orders</a></li>
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/completed-order">Completed Orders</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/declined-order">Declined Orders</a></li>
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/cash-on-delivery">Cash On Delivery</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Manage Categories</span></a>
+
+                            <ul class="dropdown-menu">
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/product-category">Categories</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/product-sub-category">Sub Categories</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/product-child-category">Child Categories</a></li>
+
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/mega-menu-category">Mega Menu Category</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/popular-category">Popular Category</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/featured-category">Featured Category</a></li>
+
+
+
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Manage Products</span></a>
+
+                            <ul class="dropdown-menu">
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/product-brand">Brands</a></li>
+
+                                <li><a class="nav-link" href="https://shopo.mamunuiux.com/admin/product-import-page">Product Bulk Import</a></li>
+
+                                <li><a class="nav-link" href="https://shopo.mamunuiux.com/admin/product/create">Create Product</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/product">Products</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/stockout-product">Stock out</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/seller-product">Seller Products</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/seller-pending-product">Awaiting for approval</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/specification-key">Specification Key</a></li>
+
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/product-review">Product Reviews</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/product-report">Product Report</a></li>
+
+
+                            </ul>
+                        </li>
+
+
+                        <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/inventory"><i class="fas fa-th-large"></i> <span>Inventory</span></a></li>
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown">
+                                <div class="icon">
+                                    <i class="fas fa-th-large"></i>
+                                </div>
+                                <span>Pos</span></a>
+                            <ul class="dropdown-menu">
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/pos">Add New Order</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/pos/bulk/order">Bulk Order Accept</a></li>
+                            </ul>
+
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-map-marker-alt"></i><span>Locations</span></a>
+
+                            <ul class="dropdown-menu">
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/country">Country / Region</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/state">State / Province</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/city">City / Delivery Area</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-walking"></i><span>Delivery Man</span></a>
+
+                            <ul class="dropdown-menu">
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/delivery-man/create">Create Delivery Man</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/delivery-man">Delivery Man</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/delivery-man-order-amount">Receive Amount</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/delivery-man-review">Review</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="far fa-newspaper"></i><span>Delivery Man Withdrow</span></a>
+
+                            <ul class="dropdown-menu">
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/delivery-man-withdraw-method">Withdrow Method</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/delivery-man-withdraw">Withdraw</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/pending-delivery-man-withdraw">Pending Withdraw</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-shopping-cart"></i><span>Ecommerce</span></a>
+
+                            <ul class="dropdown-menu">
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/flash-sale">Flash Sale</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/flash-sale-product">Flash Sale Product</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/coupon">Coupon</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/shipping">Shipping Rule</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/payment-method">Payment Method</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/advertisement"><i class="fas fa-ad"></i> <span>Advertisement</span></a></li>
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="far fa-newspaper"></i><span>Withdraw Payment</span></a>
+
+                            <ul class="dropdown-menu">
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/withdraw-method">Withdraw Method</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/seller-withdraw">Seller Withdraw</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/pending-seller-withdraw">Pending Seller Withdraw</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-user"></i><span>Users</span></a>
+                            <ul class="dropdown-menu">
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/customer-list">Customer List</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/pending-customer-list">Pending Customers</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/seller-list">Seller List</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/pending-seller-list">Pending Sellers</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-globe"></i><span>Manage Website</span></a>
+
+                            <ul class="dropdown-menu">
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/seo-setup">SEO Setup</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/slider">Slider</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/shop-page">Shop Page</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/service">Service</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/homepage-section-title">Homepage Section Title</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/seller-conditions">Seller Conditions</a></li>
+
+
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/testimonial">Testimonial</a></li>
+
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/maintainance-mode">Maintainance Mode</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/announcement">Announcement</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/subscription-banner">Subscription Banner</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/image-content">Image Content</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/default-avatar">Default Avatar</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Website Footer</span></a>
+
+                            <ul class="dropdown-menu">
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/footer">Footer</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/social-link">Social Link</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/footer-link">First Column Link</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/second-col-footer-link">Second Column Link</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/third-col-footer-link">Third Column Link</a></li>
+
+                            </ul>
+                        </li>
+
+
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-columns"></i><span>Pages</span></a>
+
+                            <ul class="dropdown-menu">
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/about-us">About Us en</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/contact-us">Contact Us</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/custom-page">Custom Page</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/terms-and-condition">Terms And Conditions</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/privacy-policy">Privacy Policy</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/faq">FAQ</a></li>
+
+                                <li class=" d-none"><a class="nav-link" href="https://shopo.mamunuiux.com/admin/error-page">Error Page</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/login-page">Login Page</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Blogs</span></a>
+
+                            <ul class="dropdown-menu">
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/blog-category">Categories</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/blog">Blogs</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/popular-blog">Popular Blogs</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/blog-comment">Comments</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-envelope"></i><span>Email Configuration</span></a>
+
+                            <ul class="dropdown-menu">
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/email-configuration">Setting</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/email-template">Email Template</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-envelope"></i><span>Sms Configuration</span></a>
+
+                            <ul class="dropdown-menu">
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/sms-notification">Setting</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/sms-template">Sms Template</a></li>
+                            </ul>
+                        </li>
+
+
+
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Language</span></a>
+
+                            <ul class="dropdown-menu">
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/admin-language">Admin Language</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/admin-validation-language">Admin Validation</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/website-language">Frontend Language</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/website-validation-language">Frontend Validation</a></li>
+
+                                <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/languages">Languages</a></li>
+                            </ul>
+                        </li>
+
+                        <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/currency"><i class="fas fa-dollar-sign"></i> <span>Currencies</span></a></li>
+
+                        <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/general-setting"><i class="fas fa-cog"></i> <span>Setting</span></a></li>
+
+                        <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/clear-database"><i class="fas fa-trash"></i> <span>Clear Database</span></a></li>
+
+                        <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/subscriber"><i class="fas fa-fire"></i> <span>Subscribers</span></a></li>
+
+                        <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/contact-message"><i class="fas fa-fa fa-envelope"></i> <span>Contact Message</span></a></li>
+
+                        <li class=""><a class="nav-link" href="https://shopo.mamunuiux.com/admin/admin"><i class="fas fa-user"></i> <span>Admin list</span></a></li>
+
+                    </ul>
+
+                </aside>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-header">
+                        <h1>Dashboard</h1>
+                    </div>
+
+                    <div class="section-body">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-primary">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Today Order</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-primary">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Today Pending Order</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-primary">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Order</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-primary">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Pending Order</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            30
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-warning">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Declined Order</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-warning">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Complete Order</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-warning">
+                                        <i class="far fa-newspaper"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Today Earning</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-warning">
+                                        <i class="far fa-newspaper"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Today Pending Earning</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-success">
+                                        <i class="far fa-newspaper"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>This month Earning</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-success">
+                                        <i class="far fa-newspaper"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>This Year Earning</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-success">
+                                        <i class="far fa-newspaper"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Earning</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-success">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Today Product Sale</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-danger">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>This Month Product Sale</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-danger">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>This Year Product Sale</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-danger">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Product Sale</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            2
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-danger">
+                                        <i class="far fa-check-circle"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Product</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            44
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-success">
+                                        <i class="far fa-check-circle"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Product Report</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-success">
+                                        <i class="far fa-check-circle"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Product Review</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            13
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-success">
+                                        <i class="far fa-user"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Seller</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            9
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-success">
+                                        <i class="far fa-user"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total User</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            91
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-primary">
+                                        <i class="far fa-user"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Subscriber</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-primary">
+                                        <i class="far fa-check-circle"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Blog</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            6
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-primary">
+                                        <i class="far fa-check-circle"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Product Category</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            11
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="card card-statistic-1">
+                                    <div class="card-icon bg-primary">
+                                        <i class="far fa-check-circle"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Brand</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            12
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="section-body">
+                        <div class="row mt-4">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Today New Order</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive table-invoice">
+                                            <table class="table table-striped" id="dataTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="5%">SN</th>
+                                                        <th width="10%">Customer</th>
+                                                        <th width="10%">Order Id</th>
+                                                        <th width="10%">Date</th>
+                                                        <th width="10%">Quantity</th>
+                                                        <th width="10%">Amount</th>
+                                                        <th width="10%">Order Status</th>
+                                                        <th width="10%">Payment</th>
+                                                        <th width="15%">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                </div>
+
+                <!-- Modal -->
+
+                <script>
+                    function deleteData(id) {
+                        $("#deleteForm").attr("action", 'https://shopo.mamunuiux.com/admin/delete-order' + "/" + id)
+                    }
+                </script>
+
+
+
+                <footer class="main-footer">
+                    <div class="footer-left">
+
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="deleteModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Item Delete Confirmation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are You sure delete this item ?</p>
+                    </div>
+                    <div class="modal-footer bg-whitesmoke br">
+                        <form id="deleteForm" action="" method="POST">
+                            <input type="hidden" name="_token" value="MozkdWEvgbRGfVhCTXrNwyhGDiVwxhjNlKV9uKvk" autocomplete="off"> <input type="hidden" name="_method" value="DELETE"> <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Yes, Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="https://shopo.mamunuiux.com/backend/pos/assets/js/custom.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/popper.min.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/bootstrap.min.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/datatables/jquery.dataTables.min.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/jquery.nicescroll.min.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/moment.min.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/stisla.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/scripts.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/custom.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/select2.min.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/tagify.js"></script>
+        <script src="https://shopo.mamunuiux.com/toastr/toastr.min.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/bootstrap4-toggle.min.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/fontawesome-iconpicker.min.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/bootstrap-datepicker.min.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/summernote/summernote.min.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/clockpicker/dist/bootstrap-clockpicker.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/datetimepicker/jquery.datetimepicker.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/iziToast.min.js"></script>
+        <script src="https://shopo.mamunuiux.com/backend/js/modules-toastr.js"></script>
+
+
+        <script>
+        </script>
+
+
+
+
+        <script>
+            (function($) {
+                "use strict";
+                $(document).ready(function() {
+                    $('#dataTable').DataTable();
+                    $('.select1').select2();
+                    $('.select2').select2();
+                    $('.select3').select2();
+                    $('.select4').select2();
+                    $('.select5').select2();
+                    $('.sub_cat_one').select2();
+                    $('.tags').tagify();
+                    $('.summernote').summernote();
+                    $('.datetimepicker_mask').datetimepicker({
+                        format: 'Y-m-d H:i',
+
+                    });
+                    $('.custom-icon-picker').iconpicker({
+                        templates: {
+                            popover: '<div class="iconpicker-popover popover"><div class="arrow"></div>' +
+                                '<div class="popover-title"></div><div class="popover-content"></div></div>',
+                            footer: '<div class="popover-footer"></div>',
+                            buttons: '<button class="iconpicker-btn iconpicker-btn-cancel btn btn-default btn-sm">Cancel</button>' +
+                                ' <button class="iconpicker-btn iconpicker-btn-accept btn btn-primary btn-sm">Accept</button>',
+                            search: '<input type="search" class="form-control iconpicker-search" placeholder="Type to filter" />',
+                            iconpicker: '<div class="iconpicker"><div class="iconpicker-items"></div></div>',
+                            iconpickerItem: '<a role="button" href="javascript:;" class="iconpicker-item"><i></i></a>'
+                        }
+                    })
+                    $('.datepicker').datepicker({
+                        format: 'yyyy-mm-dd',
+                        startDate: '-Infinity'
+                    });
+                    $('.clockpicker').clockpicker();
+
+                });
+
+            })(jQuery);
+        </script>
+
+</body>
+
+</html>
