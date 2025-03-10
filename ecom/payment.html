@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Load Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Styling for buttons and payment options */
+        .btn-primary {
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+        .btn-primary:hover {
+            background-color: #e0a800;
+            border-color: #d39e00;
+        }
+        .payment-details {
+            display: none;
+        }
+        .custom-control-label {
+            font-weight: bold;
+        }
+        .card-header {
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+        .btn-back {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 50px;
+        }
+        .btn-back:hover {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- Back Arrow Button -->
+<a href="index.html" class="btn btn-primary">
+    <i class="fas fa-arrow-left" ></i> 
+</a>
+
+<!-- Payment Start -->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-header text-white">
+                    <h4 class="font-weight-semi-bold m-0">Payment Details</h4>
+                </div>
+                <div class="card-body">
+                    <form action="payment-success.html" method="POST">
+                        <div class="form-group">
+                            <h5>Select Payment Method</h5>
+                            <!-- Cash on Delivery -->
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" name="payment" id="cashondelivery" value="cod" checked>
+                                <label class="custom-control-label" for="cashondelivery">Cash on Delivery</label>
+                            </div>
+
+                            <!-- Credit/Debit Card -->
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" name="payment" id="creditcard" value="card">
+                                <label class="custom-control-label" for="creditcard">Credit/Debit Card</label>
+                            </div>
+                            <!-- Card Payment Details -->
+                            <div id="card-details" class="payment-details">
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <label>Cardholder Name</label>
+                                        <input class="form-control" type="text" placeholder="John Doe" required>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>Card Number</label>
+                                        <input class="form-control" type="text" placeholder="1234 5678 9101 1121" required>
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label>Expiration Month</label>
+                                        <input class="form-control" type="text" placeholder="MM" required>
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label>Expiration Year</label>
+                                        <input class="form-control" type="text" placeholder="YYYY" required>
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label>CVV</label>
+                                        <input class="form-control" type="text" placeholder="123" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- UPI -->
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" name="payment" id="upi" value="upi">
+                                <label class="custom-control-label" for="upi">UPI</label>
+                            </div>
+                            <!-- UPI Payment Details -->
+                            <div id="upi-details" class="payment-details">
+                                <div class="form-group">
+                                    <label>UPI ID</label>
+                                    <input class="form-control" type="text" placeholder="example@upi" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Billing Address -->
+                        <h5>Billing Address</h5>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label>Billing Address</label>
+                                <input class="form-control" type="text" placeholder="123 Main Street" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>City</label>
+                                <input class="form-control" type="text" placeholder="New York" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>ZIP Code</label>
+                                <input class="form-control" type="text" placeholder="12345" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>Country</label>
+                                <select class="custom-select" required>
+                                    <option selected>United States</option>
+                                    <option>India</option>
+                                    <option>Canada</option>
+                                    <option>United Kingdom</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>State</label>
+                                <input class="form-control" type="text" placeholder="New York" required>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-lg btn-block font-weight-bold py-3" type="submit">Pay Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Payment End -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.querySelectorAll('input[name="payment"]').forEach((radio) => {
+        radio.addEventListener('change', function() {
+            // Hide all payment details
+            document.getElementById('card-details').style.display = 'none';
+            document.getElementById('upi-details').style.display = 'none';
+
+            // Show the appropriate payment method details
+            if (this.id === 'creditcard') {
+                document.getElementById('card-details').style.display = 'block';
+            } else if (this.id === 'upi') {
+                document.getElementById('upi-details').style.display = 'block';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

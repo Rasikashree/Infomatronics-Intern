@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banarasi-Saree Collection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.9/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .rating i {
+            font-size: 24px;
+            color: gold;
+            cursor: pointer;
+        }
+        .btn {
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .add-to-cart {
+            background-color: #ffc107; /* Set to your desired color */
+            color: white; /* Text color */
+        }
+
+        .add-to-cart:hover {
+            background-color: #e0a800; /* Darker shade for hover effect */
+        }
+
+        .buy-now {
+            background-color: #ffc107; /* Set to your desired color */
+            color: white; /* Text color */
+        }
+
+        .buy-now:hover {
+            background-color: #e0a800; /* Darker shade for hover effect */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 1;">
+        <div class="navbar-nav w-100 overflow-hidden" style="height: 410px;">
+            <a href="#silk-saree-section" class="nav-item nav-link">Silk Saree</a>
+            <a href="#soft-silk-section" class="nav-item nav-link">Soft Silk Saree</a>
+            <a href="#cotton-saree-section" class="nav-item nav-link">Cotton Saree</a>
+            <a href="#banarasi-saree-section" class="nav-item nav-link">Banarasi Saree</a>
+            <a href="#Mysore-Silk-Saree-section" class="nav-item nav-link">Mysore Silk Saree</a>
+            <a href="#Kanjivaram-Saree-section" class="nav-item nav-link">kanjivaram Saree</a>
+            <a href="#Chiffon-Saree-section" class="nav-item nav-link">Chiffon Saree</a>
+            <a href="#Kanjipuram-Saree-section" class="nav-item nav-link">Kanjipuram Saree</a>
+        </div>
+    </nav>
+
+    <div id="searchResultsContainer">
+        <h2><span id="searchQuery"></span></h2>
+        <div id="productList">
+            <!-- Dynamically generated list of products will go here -->
+        </div>
+    </div>
+
+
+    <!-- <div class="search-container">
+        <form id="searchForm">
+            <div class="input-group">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search for products, brands, and more..." autocomplete="off">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div id="autocompleteList" class="autocomplete-items"></div>
+        </form>
+    </div> -->
+    
+    <script>
+    const productList = [
+        { name: "Silk Saree", url: "silk-saree.html" },
+        { name: "Soft Silk Saree", url: "soft-silk-saree.html" },
+        { name: "Cotton Saree", url: "cotton-saree.html" },
+        { name: "Banarasi Saree", url: "banarasi-saree.html" },
+        { name: "Mysore Silk Saree", url: "mysore-silk-saree.html" },
+        { name: "Kanjivaram Saree", url: "kanjivaram-saree.html" },
+        { name: "Chiffon Saree", url: "chiffon-saree.html" },
+        { name: "Kanjipuram Saree", url: "kanjipuram-saree.html" }
+    ];
+    
+    document.getElementById('searchInput').addEventListener('input', function() {
+        let input = this.value.toLowerCase();
+        let autocompleteList = document.getElementById('autocompleteList');
+        autocompleteList.innerHTML = ''; // Clear the current list
+    
+        if (!input) return false; // Exit if no input
+    
+        productList.forEach(function(product) {
+            if (product.name.toLowerCase().includes(input)) {
+                let item = document.createElement('div');
+                item.innerHTML = product.name;
+                item.addEventListener('click', function() {
+                    document.getElementById('searchInput').value = product.name;
+                    autocompleteList.innerHTML = '';
+                    window.location.href = product.url; // Redirect to specific HTML file
+                });
+                autocompleteList.appendChild(item);
+            }
+        });
+    });
+    
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let query = document.getElementById('searchInput').value.toLowerCase();
+    
+        // Find the matching product
+        let matchedProduct = productList.find(product => product.name.toLowerCase() === query);
+    
+        if (matchedProduct) {
+            // Redirect to the product's HTML file if an exact match is found
+            window.location.href = matchedProduct.url;
+        } else {
+            // If no match is found, you can redirect to a general search page or show an alert
+            window.location.href = 'search-results.html?query=' + encodeURIComponent(query);
+        }
+    });
+    </script>
+    
+    
+    <!-- Back button -->
+    <a href="index.html" class="back-button" style="position: absolute; top: 20px; left: 20px; font-size: 24px; color: black;">
+        <i class='bx bx-arrow-back'></i>
+    </a>
+    
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Banarasi-Saree Collection</h2>
+        <div class="row">
+            <!-- Silk Saree 1 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="banarasi detail1.html">
+                        <img src="img/saree1.jpg" class="card-img-top" alt="">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Elegant Silk Saree</h5>
+                        <p class="card-text">Price: ₹180</p>
+                        <p class="card-text">Details: This saree offers a perfect blend of elegance and tradition.</p>
+                        <p>Rating...</p>
+                        <!-- Editable Rating -->
+                        <div class="rating" data-rating="5">
+                            <i class="fas fa-star" data-value="1"></i>
+                            <i class="fas fa-star" data-value="2"></i>
+                            <i class="fas fa-star" data-value="3"></i>
+                            <i class="fas fa-star" data-value="4"></i>
+                            <i class="fas fa-star" data-value="5"></i>
+                        </div>
+                        <center>
+                            <!-- Flipkart Add to Cart Button -->
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <!-- Flipkart Buy Now Button -->
+                            <button class="btn buy-now" id="buyNowBtn1">Buy Now</button>
+                        </center>       
+                    </div>
+                </div>
+            </div>
+            <!-- Silk Saree 2 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="banarasi detail2.html">
+                        <img src="img/saree2.jpg" class="card-img-top" alt="">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Classic Silk Saree</h5>
+                        <p class="card-text">Price: ₹200</p>
+                        <p class="card-text">Details: A timeless piece perfect for weddings and festive occasions.</p>
+                        <p>Rating...</p>
+                        <!-- Editable Rating -->
+                        <div class="rating" data-rating="5">
+                            <i class="fas fa-star" data-value="1"></i>
+                            <i class="fas fa-star" data-value="2"></i>
+                            <i class="fas fa-star" data-value="3"></i>
+                            <i class="fas fa-star" data-value="4"></i>
+                            <i class="fas fa-star" data-value="5"></i>
+                        </div>
+                        <center>
+                            <!-- Flipkart Add to Cart Button -->
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <!-- Flipkart Buy Now Button -->
+                            <button class="btn buy-now" id="buyNowBtn2">Buy Now</button>
+                        </center>       
+                    </div>
+                </div>
+            </div>
+            <!-- Silk Saree 3 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="banarasi detail3.html">
+                        <img src="img/saree5.jpg" class="card-img-top" alt="Silk Saree 3">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Designer Silk Saree</h5>
+                        <p class="card-text">Price: ₹220</p>
+                        <p class="card-text">Details: A designer saree with a modern twist on traditional silk fabric.</p>
+                        <p>Rating...</p>
+                        <!-- Editable Rating -->
+                        <div class="rating" data-rating="5">
+                            <i class="fas fa-star" data-value="1"></i>
+                            <i class="fas fa-star" data-value="2"></i>
+                            <i class="fas fa-star" data-value="3"></i>
+                            <i class="fas fa-star" data-value="4"></i>
+                            <i class="fas fa-star" data-value="5"></i>
+                        </div>
+                        <center>
+                            <!-- Flipkart Add to Cart Button -->
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <!-- Flipkart Buy Now Button -->
+                            <button class="btn buy-now" id="buyNowBtn3">Buy Now</button>
+                        </center>       
+                    </div>
+                </div>
+            </div>
+            <!-- Silk Saree 4 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="banarasi detail4.html">
+                        <img src="img/saree9.jpg" class="card-img-top" alt="Silk Saree 4">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Luxury Silk Saree</h5>
+                        <p class="card-text">Price: ₹250</p>
+                        <p class="card-text">Details: A luxurious silk saree that adds a royal touch to any occasion.</p>
+                        <p>Rating...</p>
+                        <!-- Editable Rating -->
+                        <div class="rating" data-rating="5">
+                            <i class="fas fa-star" data-value="1"></i>
+                            <i class="fas fa-star" data-value="2"></i>
+                            <i class="fas fa-star" data-value="3"></i>
+                            <i class="fas fa-star" data-value="4"></i>
+                            <i class="fas fa-star" data-value="5"></i>
+                        </div>
+                        <center>
+                            <!-- Flipkart Add to Cart Button -->
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <!-- Flipkart Buy Now Button -->
+                            <button class="btn buy-now" id="buyNowBtn4">Buy Now</button>
+                        </center>       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Add event listeners to all Buy Now buttons
+        document.querySelectorAll('.buy-now').forEach(button => {
+            button.addEventListener('click', function() {
+                // Redirect to the payment page
+                window.location.href = 'payment.html'; // Replace with the actual URL of your payment page
+            });
+        });
+
+        document.querySelectorAll('.rating i').forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = this.getAttribute('data-value');
+                const parent = this.parentElement;
+                
+                parent.setAttribute('data-rating', rating);
+                
+                updateStars(parent, rating);
+            });
+        });
+
+        function updateStars(parent, rating) {
+            const stars = parent.querySelectorAll('i');
+            stars.forEach(star => {
+                const value = star.getAttribute('data-value');
+                if (value <= rating) {
+                    star.classList.add('fas'); // filled star
+                    star.classList.remove('far'); // empty star
+                } else {
+                    star.classList.remove('fas'); // filled star
+                    star.classList.add('far'); // empty star
+                }
+            });
+        }
+    </script>
+</body>
+</html>

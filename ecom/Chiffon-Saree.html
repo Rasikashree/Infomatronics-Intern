@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiffon-Saree Collection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.9/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .rating i {
+            font-size: 24px;
+            color: gold;
+            cursor: pointer;
+        }
+        .btn {
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .add-to-cart {
+            background-color: #ffc107; /* Set to your desired color */
+            color: white; /* Text color */
+        }
+
+        .add-to-cart:hover {
+            background-color: #e0a800; /* Darker shade for hover effect */
+        }
+
+        .buy-now {
+            background-color: #ffc107; /* Set to your desired color */
+            color: white; /* Text color */
+        }
+
+        .buy-now:hover {
+            background-color: #e0a800; /* Darker shade for hover effect */
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="search-container">
+        <form id="searchForm">
+            <div class="input-group">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search for products, brands, and more..." autocomplete="off">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div id="autocompleteList" class="autocomplete-items"></div>
+        </form>
+    </div> -->
+    
+    <script>
+    const productList = [
+        { name: "Silk Saree", url: "silk-saree.html" },
+        { name: "Soft Silk Saree", url: "soft-silk-saree.html" },
+        { name: "Cotton Saree", url: "cotton-saree.html" },
+        { name: "Banarasi Saree", url: "banarasi-saree.html" },
+        { name: "Mysore Silk Saree", url: "mysore-saree.html" },
+        { name: "Kanjivaram Saree", url: "kanjivaram-saree.html" },
+        { name: "Chiffon Saree", url: "chiffon-saree.html" },
+        { name: "Kanjipuram Saree", url: "kanjipuram.html" }
+    ];
+    
+    document.getElementById('searchInput').addEventListener('input', function() {
+        let input = this.value.toLowerCase();
+        let autocompleteList = document.getElementById('autocompleteList');
+        autocompleteList.innerHTML = ''; // Clear the current list
+    
+        if (!input) return false; // Exit if no input
+    
+        productList.forEach(function(product) {
+            if (product.name.toLowerCase().includes(input)) {
+                let item = document.createElement('div');
+                item.innerHTML = product.name;
+                item.addEventListener('click', function() {
+                    document.getElementById('searchInput').value = product.name;
+                    autocompleteList.innerHTML = '';
+                    window.location.href = product.url; // Redirect to specific HTML file
+                });
+                autocompleteList.appendChild(item);
+            }
+        });
+    });
+    
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let query = document.getElementById('searchInput').value.toLowerCase();
+    
+        // Find the matching product
+        let matchedProduct = productList.find(product => product.name.toLowerCase() === query);
+    
+        if (matchedProduct) {
+            // Redirect to the product's HTML file if an exact match is found
+            window.location.href = matchedProduct.url;
+        } else {
+            // If no match is found, you can redirect to a general search page or show an alert
+            window.location.href = 'search-results.html?query=' + encodeURIComponent(query);
+        }
+    });
+    </script>
+    
+    <!-- Back button -->
+    <a href="index.html" class="back-button" style="position: absolute; top: 20px; left: 20px; font-size: 24px; color: black;">
+        <i class='bx bx-arrow-back'></i>
+    </a>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Chiffon-Saree Collection</h2>
+        <div class="row">
+            <!-- Chiffon Saree 1 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="chiffon detail1.html">
+                        <img src="img/saree1.jpg" class="card-img-top" alt="Elegant Chiffon Saree">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Elegant Chiffon Saree</h5>
+                        <p class="card-text">Price: ₹180</p>
+                        <p class="card-text">Details: This saree offers a perfect blend of elegance and tradition.</p>
+                        <p>Rating...</p>
+                        <!-- Editable Rating -->
+                        <div class="rating" data-rating="5">
+                            <i class="fas fa-star" data-value="1"></i>
+                            <i class="fas fa-star" data-value="2"></i>
+                            <i class="fas fa-star" data-value="3"></i>
+                            <i class="fas fa-star" data-value="4"></i>
+                            <i class="fas fa-star" data-value="5"></i>
+                        </div>
+                        <!-- Buttons for Add To Cart and Buy -->
+                        <div class="d-flex align-items-center mt-3">
+                            <center>
+                                <!-- Flipkart Add to Cart Button -->
+                                <button class="btn add-to-cart">Add to Cart</button>
+                                <!-- Flipkart Buy Now Button -->
+                                <button class="btn buy-now" id="buyNowBtn1">Buy Now</button>
+                            </center>       
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Chiffon Saree 2 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="chiffon detail2.html">
+                        <img src="img/saree2.jpg" class="card-img-top" alt="Classic Chiffon Saree">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Classic Chiffon Saree</h5>
+                        <p class="card-text">Price: ₹200</p>
+                        <p class="card-text">Details: A timeless piece perfect for weddings and festive occasions.</p>
+                        <p>Rating...</p>
+                        <!-- Editable Rating -->
+                        <div class="rating" data-rating="4">
+                            <i class="fas fa-star" data-value="1"></i>
+                            <i class="fas fa-star" data-value="2"></i>
+                            <i class="fas fa-star" data-value="3"></i>
+                            <i class="fas fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                        <center>
+                            <!-- Flipkart Add to Cart Button -->
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <!-- Flipkart Buy Now Button -->
+                            <button class="btn buy-now" id="buyNowBtn2">Buy Now</button>
+                        </center>       
+                    </div>
+                </div>
+            </div>
+            <!-- Chiffon Saree 3 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="chiffon detail3.html">
+                        <img src="img/saree5.jpg" class="card-img-top" alt="Designer Chiffon Saree">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Designer Chiffon Saree</h5>
+                        <p class="card-text">Price: ₹220</p>
+                        <p class="card-text">Details: A designer saree with a modern twist on traditional silk fabric.</p>
+                        <p>Rating...</p>
+                        <!-- Editable Rating -->
+                        <div class="rating" data-rating="4.5">
+                            <i class="fas fa-star" data-value="1"></i>
+                            <i class="fas fa-star" data-value="2"></i>
+                            <i class="fas fa-star" data-value="3"></i>
+                            <i class="fas fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                        <center>
+                            <!-- Flipkart Add to Cart Button -->
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <!-- Flipkart Buy Now Button -->
+                            <button class="btn buy-now" id="buyNowBtn3">Buy Now</button>
+                        </center>       
+                    </div>
+                </div>
+            </div>
+            <!-- Chiffon Saree 4 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="chiffon detail4.html">
+                        <img src="img/saree9.jpg" class="card-img-top" alt="Luxury Chiffon Saree">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Luxury Chiffon Saree</h5>
+                        <p class="card-text">Price: ₹250</p>
+                        <p class="card-text">Details: A luxurious silk saree that adds a royal touch to any occasion.</p>
+                        <p>Rating...</p>
+                        <!-- Editable Rating -->
+                        <div class="rating" data-rating="5">
+                            <i class="fas fa-star" data-value="1"></i>
+                            <i class="fas fa-star" data-value="2"></i>
+                            <i class="fas fa-star" data-value="3"></i>
+                            <i class="fas fa-star" data-value="4"></i>
+                            <i class="fas fa-star" data-value="5"></i>
+                        </div>
+                        <center>
+                            <!-- Flipkart Add to Cart Button -->
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <!-- Flipkart Buy Now Button -->
+                            <button class="btn buy-now" id="buyNowBtn4">Buy Now</button>
+                        </center>       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add event listeners for Buy Now buttons
+        document.getElementById('buyNowBtn1').addEventListener('click', function() {
+            window.location.href = 'payment.html'; 
+        });
+        document.getElementById('buyNowBtn2').addEventListener('click', function() {
+            window.location.href = 'payment.html'; 
+        });
+        document.getElementById('buyNowBtn3').addEventListener('click', function() {
+            window.location.href = 'payment.html'; 
+        });
+        document.getElementById('buyNowBtn4').addEventListener('click', function() {
+            window.location.href = 'payment.html'; 
+        });
+
+        document.querySelectorAll('.rating i').forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = this.getAttribute('data-value');
+                const parent = this.parentElement;
+                
+                parent.setAttribute('data-rating', rating);
+                
+                updateStars(parent, rating);
+            });
+        });
+
+        function updateStars(parent, rating) {
+            const stars = parent.querySelectorAll('i');
+            stars.forEach(star => {
+                const value = star.getAttribute('data-value');
+                if (value <= rating) {
+                    star.classList.remove('far');
+                    star.classList.add('fas');
+                } else {
+                    star.classList.remove('fas');
+                    star.classList.add('far');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
